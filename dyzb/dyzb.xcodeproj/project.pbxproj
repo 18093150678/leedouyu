@@ -16,6 +16,7 @@
 		74E0E81F27553DE10048BF75 /* dyzbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E0E81E27553DE10048BF75 /* dyzbTests.swift */; };
 		74E0E82927553DE10048BF75 /* dyzbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E0E82827553DE10048BF75 /* dyzbUITests.swift */; };
 		74E0E82B27553DE10048BF75 /* dyzbUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E0E82A27553DE10048BF75 /* dyzbUITestsLaunchTests.swift */; };
+		74E0E84027554DCB0048BF75 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E0E83F27554DCB0048BF75 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		74E0E82427553DE10048BF75 /* dyzbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dyzbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E0E82827553DE10048BF75 /* dyzbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dyzbUITests.swift; sourceTree = "<group>"; };
 		74E0E82A27553DE10048BF75 /* dyzbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dyzbUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		74E0E83F27554DCB0048BF75 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 		74E0E83E27554CAC0048BF75 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				74E0E83F27554DCB0048BF75 /* CollectionViewCell.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			files = (
 				74E0E80C27553DDE0048BF75 /* ViewController.swift in Sources */,
 				74E0E80827553DDE0048BF75 /* AppDelegate.swift in Sources */,
+				74E0E84027554DCB0048BF75 /* CollectionViewCell.swift in Sources */,
 				74E0E80A27553DDE0048BF75 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
