@@ -12,12 +12,12 @@ private let cellName : String = "cellid";
 class PageContentView: UIView {
     
     private var chidVcs : [UIViewController] ;
-    private var parentViewController : UIViewController
+    private weak var parentViewController : UIViewController?
     
-    private lazy var collectionView : UICollectionView = {
+    private lazy var collectionView : UICollectionView = { [weak self] in
         
         let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout.init();
-        layout.itemSize =  self.bounds.size;
+        layout.itemSize =  (self?.bounds.size)!;
         //设置行间距
         layout.minimumLineSpacing = 0 ;
         //设置item边间距
@@ -40,7 +40,7 @@ class PageContentView: UIView {
     }()
     
 
-    init(frame : CGRect,chidVcs : [UIViewController], parentViewController : UIViewController){
+    init(frame : CGRect,chidVcs : [UIViewController], parentViewController : UIViewController?){
         self.chidVcs = chidVcs;
         self.parentViewController = parentViewController;
         super.init(frame: frame);
@@ -57,19 +57,20 @@ extension PageContentView {
     private func setupUI(){
         //把所有的chidVcs添加到父类控制器
         for chidVc in chidVcs {
-            parentViewController.addChild(chidVc);
+            parentViewController?.addChild(chidVc);
         }
         
         //添加一个collectionView
         self.addSubview(collectionView);
     }
 }
-
+/**
+ UICollectionViewDataSource 协议
+ */
 extension PageContentView : UICollectionViewDelegate , UICollectionViewDataSource {
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          return chidVcs.count;
     }
-    
     
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath);

@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
     }()
     
     //懒加载 pagecontentview
-    private lazy var pageContentView : PageContentView = {
+    private lazy var pageContentView : PageContentView = { [weak self] in
         
         let pageViewY : CGFloat = kNavigationBarH + kStatusBarH + kTitleViewH;
         

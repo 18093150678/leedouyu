@@ -31,13 +31,11 @@ class PageTitleView: UIView {
         scrollerline.backgroundColor = UIColor.orange;
         return  scrollerline;
     }()
-    
-    
+
     init(frame : CGRect , titles :  [String]){
         self.titles = titles;
         super.init(frame: frame);
         setupUI();
-        
     }
     
     required init?(coder: NSCoder) {
@@ -77,8 +75,13 @@ extension PageTitleView {
             titleLabel.frame = CGRect.init(x: labelX, y: labelY, width: labelW, height: labelH);
             scrollview.addSubview(titleLabel);
             titleLabels.append(titleLabel);
+            
+            //添加手势
+            //开启交互
+            titleLabel.isUserInteractionEnabled = true;
+            let tagGesture : UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(titleLabelClick))
+            titleLabel.addGestureRecognizer(tagGesture);
         }
-        
     }
     /**
      设置里呢scrollline
@@ -96,5 +99,16 @@ extension PageTitleView {
         label.textColor = UIColor.orange;
         scrollerline.frame = CGRect.init(x: label.frame.origin.x, y: frame.height - kScrollerH, width: label.frame.width, height: kScrollerH);
         scrollview.addSubview(scrollerline);
+    }
+}
+
+//MARK: 舰艇label手势：点击
+extension PageTitleView {
+    @objc private func titleLabelClick(tagGesture : UITapGestureRecognizer){
+        //获取当前的labels
+        guard  let currentLabel : UILabel = tagGesture.view as? UILabel else {return;};    //添加守护 如果当前获得的view 不是labels 直接返回
+        //改变文字颜色
+        
+        
     }
 }
